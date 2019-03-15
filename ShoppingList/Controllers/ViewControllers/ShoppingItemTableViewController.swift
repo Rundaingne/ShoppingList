@@ -23,7 +23,6 @@ class ShoppingItemTableViewController: UITableViewController {
     }() //DO NOT FORGET TO MAKE THIS A CLOSURE, DANG IT
 
     override func viewDidLoad() {
-        fetchedResultsController.delegate = self
         super.viewDidLoad()
         //Now in the viewDidLoad I need to preform a fetch, so everytime the app loads up I fetch all my data.
         //To do this, I will need to create the delegate for the resultscontroller. Time to use my code snippet.
@@ -91,27 +90,27 @@ class ShoppingItemTableViewController: UITableViewController {
     
 }
 
-extension ShoppingItemTableViewController: NSFetchedResultsControllerDelegate {
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        switch type {
-        case .delete:
-            guard let indexPath = indexPath else {return}
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        case .insert:
-            guard let newIndexPath = newIndexPath else {return}
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
-        case .move:
-            guard let indexPath = indexPath,
-                let newIndexPath = newIndexPath else {return}
-            tableView.moveRow(at: indexPath, to: newIndexPath)
-            tableView.reloadRows(at: [indexPath, newIndexPath], with: .automatic)
-        case .update:
-            guard let indexPath = indexPath else {return}
-            tableView.reloadRows(at: [indexPath], with: .automatic)
-            
-        }
-    }
-}
+//extension ShoppingItemTableViewController: NSFetchedResultsControllerDelegate {
+//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+//        switch type {
+//        case .delete:
+//            guard let indexPath = indexPath else {return}
+//            tableView.deleteRows(at: [indexPath], with: .none)
+//        case .insert:
+//            guard let newIndexPath = newIndexPath else {return}
+//            tableView.insertRows(at: [newIndexPath], with: .none)
+//        case .move:
+//            guard let indexPath = indexPath,
+//                let newIndexPath = newIndexPath else {return}
+//            tableView.moveRow(at: indexPath, to: newIndexPath)
+//            tableView.reloadRows(at: [indexPath, newIndexPath], with: .none)
+//        case .update:
+//            guard let indexPath = indexPath else {return}
+//            tableView.reloadRows(at: [indexPath], with: .none)
+//
+//        }
+//    }
+//}
 
 //Now I need to set the delegate.
 extension ShoppingItemTableViewController: ShoppingItemTableViewCellDelegate {
