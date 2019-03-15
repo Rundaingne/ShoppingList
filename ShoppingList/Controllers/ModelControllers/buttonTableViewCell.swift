@@ -10,16 +10,16 @@ import UIKit
 
 //Let's make a protocol for the ShoppingItemTableViewCell.
 protocol ShoppingItemTableViewCellDelegate: class {
-    func buttonCellButtonTapped(cell: ShoppingItemTableViewCell)
+    func buttonCellButtonTapped(cell: buttonTableViewCell)
 }
 
-class ShoppingItemTableViewCell: UITableViewCell {
+class buttonTableViewCell: UITableViewCell {
     
     //MARK: - Delegate and landing pads
     weak var delegate: ShoppingItemTableViewCellDelegate?
     //Anytime I pass data from the delegate to here, I need to have somewhere for it to land. This is the shared instance, let's make somewhere for the data to land as well.
     
-    var shoppingItem: ShoppingItem? {
+    var item: ShoppingItem? {
         didSet {
             updateViews()
         }
@@ -28,7 +28,7 @@ class ShoppingItemTableViewCell: UITableViewCell {
     
     //MARK: Outlets
     @IBOutlet weak var itemNameLabel: UILabel!
-    @IBOutlet weak var buttonImage: UIButton!
+    @IBOutlet weak var cellButton: UIButton!
     
 
     override func awakeFromNib() {
@@ -38,8 +38,8 @@ class ShoppingItemTableViewCell: UITableViewCell {
     //MARK: - Methods
     func updateViews() {
         //When information gets passed to the cell, it needs to update the nameLabel.
-        guard let shoppingItem = shoppingItem else {return}
-        itemNameLabel.text = shoppingItem.name
+        guard let item = item else {return}
+        itemNameLabel.text = item.name
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

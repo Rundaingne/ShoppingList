@@ -16,7 +16,7 @@
 		F769D2EF223BF88700950A25 /* shoppingItem+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D2EE223BF88700950A25 /* shoppingItem+Convenience.swift */; };
 		F769D2F5223BF9DE00950A25 /* ShoppingItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D2F4223BF9DE00950A25 /* ShoppingItemController.swift */; };
 		F769D2F7223BFCFC00950A25 /* ShoppingItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D2F6223BFCFC00950A25 /* ShoppingItemTableViewController.swift */; };
-		F769D2F9223BFD0D00950A25 /* ShoppingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D2F8223BFD0D00950A25 /* ShoppingItemTableViewCell.swift */; };
+		F769D2F9223BFD0D00950A25 /* buttonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D2F8223BFD0D00950A25 /* buttonTableViewCell.swift */; };
 		F769D2FC223C018D00950A25 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F769D2FB223C018D00950A25 /* Notes.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		F769D2EE223BF88700950A25 /* shoppingItem+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "shoppingItem+Convenience.swift"; sourceTree = "<group>"; };
 		F769D2F4223BF9DE00950A25 /* ShoppingItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemController.swift; sourceTree = "<group>"; };
 		F769D2F6223BFCFC00950A25 /* ShoppingItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemTableViewController.swift; sourceTree = "<group>"; };
-		F769D2F8223BFD0D00950A25 /* ShoppingItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemTableViewCell.swift; sourceTree = "<group>"; };
+		F769D2F8223BFD0D00950A25 /* buttonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonTableViewCell.swift; sourceTree = "<group>"; };
 		F769D2FB223C018D00950A25 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				F769D2F4223BF9DE00950A25 /* ShoppingItemController.swift */,
-				F769D2F8223BFD0D00950A25 /* ShoppingItemTableViewCell.swift */,
+				F769D2F8223BFD0D00950A25 /* buttonTableViewCell.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -210,7 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F769D2EF223BF88700950A25 /* shoppingItem+Convenience.swift in Sources */,
-				F769D2F9223BFD0D00950A25 /* ShoppingItemTableViewCell.swift in Sources */,
+				F769D2F9223BFD0D00950A25 /* buttonTableViewCell.swift in Sources */,
 				F769D2F5223BF9DE00950A25 /* ShoppingItemController.swift in Sources */,
 				F769D2DD223BF70300950A25 /* ShoppingList.xcdatamodeld in Sources */,
 				F769D2ED223BF84200950A25 /* CoreDataStack.swift in Sources */,

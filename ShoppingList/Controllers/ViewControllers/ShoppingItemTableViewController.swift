@@ -60,12 +60,12 @@ class ShoppingItemTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingItemCell", for: indexPath) as? ShoppingItemTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingItemCell", for: indexPath) as? buttonTableViewCell
         //Now set the delegate and get the data, and then configure the cell:
-        let shoppingItem = fetchedResultsController.object(at: indexPath)
+        let item = fetchedResultsController.object(at: indexPath)
         //We've got an item. Now put it into the cell:
         cell?.delegate = self
-        cell?.shoppingItem = shoppingItem
+        cell?.item = item
 
         return cell ?? UITableViewCell()
     }
@@ -114,16 +114,16 @@ class ShoppingItemTableViewController: UITableViewController {
 
 //Now I need to set the delegate.
 extension ShoppingItemTableViewController: ShoppingItemTableViewCellDelegate {
-    func buttonCellButtonTapped(cell: ShoppingItemTableViewCell) {
+    func buttonCellButtonTapped(cell: buttonTableViewCell) {
         //When I tap this button, the image needs to change and isPurchased needs to toggle
-        guard let shoppingItem = cell.shoppingItem else {return}
-        shoppingItem.isPurchased = !shoppingItem.isPurchased
-        if shoppingItem.isPurchased {
-            cell.buttonImage.setImage(UIImage(imageLiteralResourceName: "Venus"), for: .normal)
+        guard let item = cell.item else {return}
+        item.isPurchased = !item.isPurchased
+        if item.isPurchased {
+            cell.cellButton.setImage(UIImage(imageLiteralResourceName: "Venus"), for: .normal)
             cell.itemNameLabel.textColor = UIColor.green
             cell.backgroundColor = .black
         } else {
-            cell.buttonImage.setImage(UIImage(imageLiteralResourceName: "Isaac2"), for: .normal)
+            cell.cellButton.setImage(UIImage(imageLiteralResourceName: "Isaac2"), for: .normal)
             cell.itemNameLabel.textColor = UIColor.red
             cell.backgroundColor = .white
         }
