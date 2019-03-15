@@ -18,24 +18,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoppingItemCell" rowHeight="120" id="0op-cE-Oel" customClass="ShoppingItemTableViewCell" customModule="ShoppingList" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoppingItemCell" rowHeight="160" id="0op-cE-Oel" customClass="ShoppingItemTableViewCell" customModule="ShoppingList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0op-cE-Oel" id="6NH-J2-mb8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="228" translatesAutoresizingMaskIntoConstraints="NO" id="gaN-qL-Gdk">
-                                            <rect key="frame" x="36.5" y="44" width="302" height="32"/>
+                                            <rect key="frame" x="36.5" y="48" width="302" height="63.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdc-6C-cpM">
-                                                    <rect key="frame" x="0.0" y="5.5" width="42" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="21.5" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNZ-Qq-36T">
-                                                    <rect key="frame" x="270" y="0.0" width="32" height="32"/>
+                                                    <rect key="frame" x="270" y="16" width="32" height="32"/>
                                                     <state key="normal" image="Isaac2"/>
                                                     <connections>
                                                         <action selector="cellButtonTapped:" destination="0op-cE-Oel" eventType="touchUpInside" id="UyE-yT-1ag"/>
@@ -46,6 +46,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="gaN-qL-Gdk" firstAttribute="centerY" secondItem="6NH-J2-mb8" secondAttribute="centerY" id="Huc-k0-9JL"/>
+                                        <constraint firstItem="gaN-qL-Gdk" firstAttribute="height" secondItem="6NH-J2-mb8" secondAttribute="height" multiplier="0.4" id="UYj-RP-1F1"/>
                                         <constraint firstItem="gaN-qL-Gdk" firstAttribute="centerX" secondItem="6NH-J2-mb8" secondAttribute="centerX" id="iqr-rb-WfQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
