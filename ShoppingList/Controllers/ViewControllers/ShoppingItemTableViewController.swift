@@ -24,6 +24,7 @@ class ShoppingItemTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchedResultsController.delegate = self
         //Now in the viewDidLoad I need to preform a fetch, so everytime the app loads up I fetch all my data.
         //To do this, I will need to create the delegate for the resultscontroller. Time to use my code snippet.
         do {
@@ -32,6 +33,11 @@ class ShoppingItemTableViewController: UITableViewController {
             print("Error fetching data")
         }
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     //MARK: - Methods
@@ -90,27 +96,27 @@ class ShoppingItemTableViewController: UITableViewController {
     
 }
 
-//extension ShoppingItemTableViewController: NSFetchedResultsControllerDelegate {
-//    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-//        switch type {
-//        case .delete:
-//            guard let indexPath = indexPath else {return}
-//            tableView.deleteRows(at: [indexPath], with: .none)
-//        case .insert:
-//            guard let newIndexPath = newIndexPath else {return}
-//            tableView.insertRows(at: [newIndexPath], with: .none)
-//        case .move:
-//            guard let indexPath = indexPath,
-//                let newIndexPath = newIndexPath else {return}
-//            tableView.moveRow(at: indexPath, to: newIndexPath)
-//            tableView.reloadRows(at: [indexPath, newIndexPath], with: .none)
-//        case .update:
-//            guard let indexPath = indexPath else {return}
-//            tableView.reloadRows(at: [indexPath], with: .none)
-//
-//        }
-//    }
-//}
+extension ShoppingItemTableViewController: NSFetchedResultsControllerDelegate {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .delete:
+            guard let indexPath = indexPath else {return}
+            tableView.deleteRows(at: [indexPath], with: .none)
+        case .insert:
+            guard let newIndexPath = newIndexPath else {return}
+            tableView.insertRows(at: [newIndexPath], with: .none)
+        case .move:
+            guard let indexPath = indexPath,
+                let newIndexPath = newIndexPath else {return}
+            tableView.moveRow(at: indexPath, to: newIndexPath)
+            tableView.reloadRows(at: [indexPath, newIndexPath], with: .none)
+        case .update:
+            guard let indexPath = indexPath else {return}
+            tableView.reloadRows(at: [indexPath], with: .none)
+
+        }
+    }
+}
 
 //Now I need to set the delegate.
 extension ShoppingItemTableViewController: ShoppingItemTableViewCellDelegate {
@@ -127,8 +133,5 @@ extension ShoppingItemTableViewController: ShoppingItemTableViewCellDelegate {
             cell.itemNameLabel.textColor = UIColor.red
             cell.backgroundColor = .white
         }
-        tableView.reloadData()
     }
-    
-    
 }

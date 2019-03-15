@@ -13,7 +13,7 @@ import CoreData
 
 extension ShoppingItem {
     @discardableResult
-    convenience init(name: String, isPurchased: Bool = false, context: NSManagedObjectContext = CoreDataStack.context) {
+    convenience init(name: String, isPurchased: Bool = true, context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
         self.name = name
         self.isPurchased = isPurchased
